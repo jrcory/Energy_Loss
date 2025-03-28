@@ -1,0 +1,7 @@
+To run:
+
+`source env_fishtank.sh`: make sure you have root loaded
+
+`root example_macro.C`
+
+This will load in the two energy loss tables in this folder for Fe26 in He gas at 1atm and calculate the energy loss and range. 
