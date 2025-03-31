@@ -20,14 +20,14 @@ void example_macro()
 
     // Load in energy loss model for Fe26 in He gas from LISE++
     AtELossTable eModelLise;
-    eModelLise.LoadLiseTable("./30S_4He_Lise.txt", 30, 1.3e-4, 2); 
+    eModelLise.LoadLiseTable("./30S_4He_Lise_um.txt", 30, -1.3e-4, 2); 
     //62 is mass, next is density (only matters if you are chaning 
     // the density of the material while making calculations. Units are g/cm^3.
     // Sign of density sets the units used when exporting the table in LISE.
     // 2 is which column in the table to use (each is a different model). ATIMA-LS is 2.
 
     double inEn = 74; //Initial energy in MeV
-    double distance = 25; //Distance in mm
+    double distance = 12.5; //Distance in mm
 
     std::cout << "Energy loss from SRIM: " << eModelSrim.GetEnergyLoss(inEn, distance) << std::endl;
     std::cout << "Energy loss from LISE: " << eModelLise.GetEnergyLoss(inEn, distance) << std::endl;

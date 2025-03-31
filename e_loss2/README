@@ -5,3 +5,5 @@ To run:
 `root example_macro.C`
 
 This will load in the two energy loss tables in this folder for Fe26 in He gas at 1atm and calculate the energy loss and range. 
+
+FROM JORDAN: ensure lise tables are in units of MeV/um or this will not work, it is hard to tell from lise file alone so remake the file if results differ from srim by a lot

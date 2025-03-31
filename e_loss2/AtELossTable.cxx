@@ -199,9 +199,9 @@ void AtELossTable::LoadLiseTable(std::string fileName, double mass, double densi
          double dedx = std::stod(tokens.at(1 + column * 2));
 
          if (density > 0) // dEdX is in units MeV/(mg/cm^2)
-            dedx *= (100 * density);
-         // dEdX is in units MeV/um
-            dedx *= 1000;
+            dedx *= (100 * density);//JC change from 100 to 1000, convert ddensity from g/cm^3 to mg/cm^3 to match units of dedx
+         // dEdX is in units MeV/um *JC change - MeV/cm
+            dedx *= 1000; //changed from 1000 to .1 to convert to MeV/mm
 
          // LOG(debug) << "En: " << en << " dEdX " << dedx;
          // If we made it this far then we have a valid table entry
