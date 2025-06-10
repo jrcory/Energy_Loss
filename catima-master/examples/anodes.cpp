@@ -145,8 +145,11 @@ int main(int argc,char **argv){
     g2->SetTitle("FWHM per anode");
     g2->Draw();
     cout << "scaling factors per anode : "; 
-    for (int i=0;i<19;i++){cout << scales[i] << ",";}
+    for (int i=0;i<19;i++){cout << scales[i] << ", ";}
     cout << scales[19] << endl;
+    cout << "fwhm per anode: "; 
+    for (int i=0;i<19;i++){cout << fwhm[i] << ", ";}
+    cout << fwhm[19] << endl;
     app->Run(kTRUE); //canvas main menu ->File ->QUIT ROOT (I wish there was a better way of doing this but ig its fine
     delete app;     
     input->Close();
