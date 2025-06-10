@@ -38,11 +38,11 @@ int main(int argc,char **argv){
     runinfo run; 
     run.setinfo(runnb);
 //create output file 
-    std::string fileout = Form("Sim_Data%i.csv",anode);  
+    std::string fileout = Form("Data/%s/%sSim_Data%i.csv",run.lab,run.lab,anode);  
     std::ofstream cfile;
     cfile.open(fileout);
 //open gemini output file to use as input
-    TFile *fusion_input = TFile::Open(Form("../../../gemini/20O_fusion%i.root",anode),"READ");
+    TFile *fusion_input = TFile::Open(Form("../../../gemini/Data/%s/%s_fusion%i.root",run.lab,run.lab,anode),"READ");
 //intilize tree  
     TTree *t1 = new TTree();
     t1 = (TTree*)fusion_input->Get("GeminiEvent");     

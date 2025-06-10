@@ -1,5 +1,6 @@
 #ifndef runinfo_H
 #define runinfo_H
+#include <string>
 namespace info{
 	class runinfo{
 		public:
@@ -8,6 +9,7 @@ namespace info{
 		int gasZ[4]={0};
 		int gasS[4]={0};
 		float Ein, density;
+		char* lab; 
 		void setinfo(int nb);
 	};
 }
